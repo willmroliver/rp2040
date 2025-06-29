@@ -3500,8 +3500,26 @@ CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_i
   /Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_sections/include/pico/platform/sections.h \
   /Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/include/pico/unique_id.h
 
-CMakeFiles/blink.dir/blink.c.o: /Users/willoliver/pico/hello/blink.c
+CMakeFiles/blink.dir/blink.c.o: /Users/willoliver/pico/hello/blink.c \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/features.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
 
+CMakeFiles/blink.dir/clocks.c.o: /Users/willoliver/pico/hello/clocks.c \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/_newlib_version.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/arm-none-eabi/include/sys/features.h \
+  /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/14.2.1/include/stdint.h
+
+
+/Users/willoliver/pico/hello/clocks.c:
 
 /Users/willoliver/pico/pico-sdk/src/common/pico_stdlib_headers/include/pico/stdlib.h:
 

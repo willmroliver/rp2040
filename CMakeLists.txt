@@ -9,6 +9,7 @@ pico_sdk_init()
 
 add_executable(${PROJECT_NAME}
             ${PROJECT_NAME}.c
+            clocks.c
         )
 
 # pull in common dependencies

@@ -1,3 +1,5 @@
+#include <stdint.h>
+
 #define SIO_BASE 0xd0000000
 #define GPIO_OE 0x020
 #define GPIO_OE_SET 0x024
@@ -20,6 +22,7 @@ typedef char u8;
 typedef int i32;
 
 void blink();
+uint64_t get_time_us();
 
 void init_io(u32 mask);
 void init_gpio(u8 io);
@@ -37,9 +40,10 @@ int main()
 
 void blink() 
 {
-	volatile u32 i, spin_for = (1 << 22);
 	const u8 IO_BANK0 = 5;
 	const u8 LED = 25;
+
+	volatile uint64_t freq = 250000, end;
 
 	init_io((1 << IO_BANK0));
 	funcsel(LED, GPIO_FUNCSEL_SIO);
@@ -48,9 +52,11 @@ void blink()
 
 	while (1) {
 		gpio_put(LED, 1);
-		for (i = 0; i < spin_for; i++);
+		end = get_time_us() + freq;
+		while (get_time_us() < end);
 		gpio_put(LED, 0);
-		for (i = 0; i < spin_for; i++);
+		end = get_time_us() + freq;
+		while (get_time_us() < end);
 	}
 }
 

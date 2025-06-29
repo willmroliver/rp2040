@@ -217,6 +217,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o" "gcc" "CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o.d"
   "/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c" "CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o" "gcc" "CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o.d"
   "/Users/willoliver/pico/hello/blink.c" "CMakeFiles/blink.dir/blink.c.o" "gcc" "CMakeFiles/blink.dir/blink.c.o.d"
+  "/Users/willoliver/pico/hello/clocks.c" "CMakeFiles/blink.dir/clocks.c.o" "gcc" "CMakeFiles/blink.dir/clocks.c.o.d"
   "/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp" "CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o" "gcc" "CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o.d"
   )
 

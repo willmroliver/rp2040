@@ -150,6 +150,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o.d"
   "CMakeFiles/blink.dir/blink.c.o"
   "CMakeFiles/blink.dir/blink.c.o.d"
+  "CMakeFiles/blink.dir/clocks.c.o"
+  "CMakeFiles/blink.dir/clocks.c.o.d"
   "blink.elf"
   "blink.pdb"
 )

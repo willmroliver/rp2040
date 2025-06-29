@@ -1962,6 +1962,30 @@ blink.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/blink.dir/build.make CMakeFiles/blink.dir/blink.c.s
 .PHONY : blink.c.s
 
+clocks.o: clocks.c.o
+.PHONY : clocks.o
+
+# target to build an object file
+clocks.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blink.dir/build.make CMakeFiles/blink.dir/clocks.c.o
+.PHONY : clocks.c.o
+
+clocks.i: clocks.c.i
+.PHONY : clocks.i
+
+# target to preprocess a source file
+clocks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blink.dir/build.make CMakeFiles/blink.dir/clocks.c.i
+.PHONY : clocks.c.i
+
+clocks.s: clocks.c.s
+.PHONY : clocks.s
+
+# target to generate assembly for a file
+clocks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/blink.dir/build.make CMakeFiles/blink.dir/clocks.c.s
+.PHONY : clocks.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2197,6 +2221,9 @@ help:
 	@echo "... blink.o"
 	@echo "... blink.i"
 	@echo "... blink.s"
+	@echo "... clocks.o"
+	@echo "... clocks.i"
+	@echo "... clocks.s"
 .PHONY : help
 
 

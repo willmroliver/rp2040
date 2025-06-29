@@ -181,6 +181,9 @@ Discarded input sections
  .text.funcsel  0x00000000       0x10 CMakeFiles/blink.dir/blink.c.o
  .text.gpio_put
                 0x00000000       0x18 CMakeFiles/blink.dir/blink.c.o
+ .text          0x00000000        0x0 CMakeFiles/blink.dir/clocks.c.o
+ .data          0x00000000        0x0 CMakeFiles/blink.dir/clocks.c.o
+ .bss           0x00000000        0x0 CMakeFiles/blink.dir/clocks.c.o
  .text          0x00000000        0x0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
  .data          0x00000000        0x0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
  .bss           0x00000000        0x0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
@@ -3306,7 +3309,7 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x1564
+.text           0x10000100     0x159c
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
@@ -3371,184 +3374,188 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x10000288       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
  .text.frame_dummy
                 0x100002b0       0x24 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
- .text.blink    0x100002d4       0x80 CMakeFiles/blink.dir/blink.c.o
+ .text.blink    0x100002d4       0x98 CMakeFiles/blink.dir/blink.c.o
                 0x100002d4                blink
  .text.startup.main
-                0x10000354        0x8 CMakeFiles/blink.dir/blink.c.o
-                0x10000354                main
- .text.panic    0x1000035c       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
-                0x1000035c                panic
+                0x1000036c        0x8 CMakeFiles/blink.dir/blink.c.o
+                0x1000036c                main
+ .text.get_time_us
+                0x10000374       0x1c CMakeFiles/blink.dir/clocks.c.o
+                0x10000374                get_time_us
+ .text.panic    0x10000390       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x10000390                panic
  .text.hw_claim_or_assert
-                0x1000038c       0x44 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
-                0x1000038c                hw_claim_or_assert
+                0x100003c0       0x44 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+                0x100003c0                hw_claim_or_assert
  .text.next_striped_spin_lock_num
-                0x100003d0       0x18 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
-                0x100003d0                next_striped_spin_lock_num
+                0x10000404       0x18 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+                0x10000404                next_striped_spin_lock_num
  .text.spin_locks_reset
-                0x100003e8       0x1c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
-                0x100003e8                spin_locks_reset
+                0x1000041c       0x1c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+                0x1000041c                spin_locks_reset
  .text.runtime_init_per_core_irq_priorities
-                0x10000404       0x24 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x10000404                runtime_init_per_core_irq_priorities
+                0x10000438       0x24 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x10000438                runtime_init_per_core_irq_priorities
  .text.irq_set_enabled
-                0x10000428       0x24 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x10000428                irq_set_enabled
+                0x1000045c       0x24 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x1000045c                irq_set_enabled
  .text.irq_set_exclusive_handler
-                0x1000044c       0x54 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x1000044c                irq_set_exclusive_handler
+                0x10000480       0x54 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x10000480                irq_set_exclusive_handler
  .text.lock_init
-                0x100004a0       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
-                0x100004a0                lock_init
+                0x100004d4       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+                0x100004d4                lock_init
  .text.runtime_init_mutex
-                0x100004b0       0x50 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
-                0x100004b0                runtime_init_mutex
+                0x100004e4       0x50 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x100004e4                runtime_init_mutex
  .text.sleep_until_callback
-                0x10000500       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x10000534       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
  .text.alarm_pool_irq_handler
-                0x10000530      0x300 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x10000564      0x300 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
  .text.runtime_init_default_alarm_pool
-                0x10000830       0xdc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
-                0x10000830                runtime_init_default_alarm_pool
+                0x10000864       0xdc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x10000864                runtime_init_default_alarm_pool
  .text.alarm_pool_add_alarm_at_force_in_context
-                0x1000090c       0xb0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
-                0x1000090c                alarm_pool_add_alarm_at_force_in_context
+                0x10000940       0xb0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x10000940                alarm_pool_add_alarm_at_force_in_context
  .text.alarm_pool_cancel_alarm
-                0x100009bc       0x74 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
-                0x100009bc                alarm_pool_cancel_alarm
+                0x100009f0       0x74 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x100009f0                alarm_pool_cancel_alarm
  .text.best_effort_wfe_or_timeout
-                0x10000a30      0x10c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
-                0x10000a30                best_effort_wfe_or_timeout
+                0x10000a64      0x10c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x10000a64                best_effort_wfe_or_timeout
  .text.timer_hardware_alarm_claim
-                0x10000b3c       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-                0x10000b3c                timer_hardware_alarm_claim
+                0x10000b70       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x10000b70                timer_hardware_alarm_claim
  .text.timer_time_us_64
-                0x10000b50       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-                0x10000b50                timer_time_us_64
+                0x10000b84       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x10000b84                timer_time_us_64
  .text.time_us_64
-                0x10000b60       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-                0x10000b60                time_us_64
+                0x10000b94       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x10000b94                time_us_64
  .text.clock_configure_int_divider
-                0x10000b74       0xf4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-                0x10000b74                clock_configure_int_divider
+                0x10000ba8       0xf4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x10000ba8                clock_configure_int_divider
  .text.clock_configure_undivided
-                0x10000c68       0xe8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-                0x10000c68                clock_configure_undivided
+                0x10000c9c       0xe8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x10000c9c                clock_configure_undivided
  .text.clock_get_hz
-                0x10000d50        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-                0x10000d50                clock_get_hz
+                0x10000d84        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x10000d84                clock_get_hz
  .text.pll_init
-                0x10000d5c       0xa4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
-                0x10000d5c                pll_init
+                0x10000d90       0xa4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+                0x10000d90                pll_init
  .text.tick_start
-                0x10000e00       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
-                0x10000e00                tick_start
+                0x10000e34       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+                0x10000e34                tick_start
  .text.rom_func_lookup
-                0x10000e10       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-                0x10000e10                rom_func_lookup
+                0x10000e44       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x10000e44                rom_func_lookup
  .text.rom_data_lookup
-                0x10000e20       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-                0x10000e20                rom_data_lookup
+                0x10000e54       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x10000e54                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10000e30       0x44 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-                0x10000e30                rom_funcs_lookup
+                0x10000e64       0x44 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x10000e64                rom_funcs_lookup
  .text.xosc_init
-                0x10000e74       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
-                0x10000e74                xosc_init
+                0x10000ea8       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+                0x10000ea8                xosc_init
  .text.first_per_core_initializer
-                0x10000e9c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x10000ed0        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .text.hard_assertion_failure
-                0x10000ea0        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-                0x10000ea0                hard_assertion_failure
+                0x10000ed4        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x10000ed4                hard_assertion_failure
  .text.runtime_run_initializers
-                0x10000eac       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-                0x10000eac                runtime_run_initializers
+                0x10000ee0       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x10000ee0                runtime_run_initializers
  .text.runtime_init_early_resets
-                0x10000ed4       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10000ed4                runtime_init_early_resets
+                0x10000f08       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10000f08                runtime_init_early_resets
  .text.runtime_init_usb_power_down
-                0x10000f00       0x1c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10000f00                runtime_init_usb_power_down
+                0x10000f34       0x1c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10000f34                runtime_init_usb_power_down
  .text.runtime_init_post_clock_resets
-                0x10000f1c       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10000f1c                runtime_init_post_clock_resets
+                0x10000f50       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10000f50                runtime_init_post_clock_resets
  .text.runtime_init_rp2040_gpio_ie_disable
-                0x10000f3c       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10000f3c                runtime_init_rp2040_gpio_ie_disable
+                0x10000f70       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10000f70                runtime_init_rp2040_gpio_ie_disable
  .text.runtime_init_spin_locks_reset
-                0x10000f50        0x8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10000f50                runtime_init_spin_locks_reset
+                0x10000f84        0x8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10000f84                runtime_init_spin_locks_reset
  .text.runtime_init_install_ram_vector_table
-                0x10000f58       0x1c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10000f58                runtime_init_install_ram_vector_table
+                0x10000f8c       0x1c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10000f8c                runtime_init_install_ram_vector_table
  .text.runtime_init_clocks
-                0x10000f74       0xd8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
-                0x10000f74                runtime_init_clocks
- .text          0x1000104c       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+                0x10000fa8       0xd8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+                0x10000fa8                runtime_init_clocks
+ .text          0x10001080       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
  .text.__wrap___aeabi_uidiv
-                0x1000105c       0x4c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
-                0x1000105c                __wrap___aeabi_uidiv
-                0x1000105c                __wrap___aeabi_uidivmod
-                0x1000105c                div_u32u32
-                0x1000105c                divmod_u32u32
-                0x10001064                divmod_u32u32_unsafe
-                0x1000108c                divmod_u32u32_savestate
+                0x10001090       0x4c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+                0x10001090                __wrap___aeabi_uidiv
+                0x10001090                __wrap___aeabi_uidivmod
+                0x10001090                div_u32u32
+                0x10001090                divmod_u32u32
+                0x10001098                divmod_u32u32_unsafe
+                0x100010c0                divmod_u32u32_savestate
  .text.__aeabi_double_init
-                0x100010a8       0xa4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
-                0x100010a8                __aeabi_double_init
+                0x100010dc       0xa4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+                0x100010dc                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x1000114c       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
-                0x1000114c                double_table_shim_on_use_helper
+                0x10001180       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+                0x10001180                double_table_shim_on_use_helper
  .text.__aeabi_float_init
-                0x10001178       0x64 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
-                0x10001178                __aeabi_float_init
+                0x100011ac       0x64 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+                0x100011ac                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x100011dc       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
-                0x100011dc                float_table_shim_on_use_helper
- .text          0x10001208       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-                0x10001208                __aeabi_mem_init
- .text.memset   0x10001218        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-                0x10001218                __wrap_memset
- .text.memcpy   0x10001224        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-                0x10001224                __wrap___aeabi_memcpy
-                0x10001224                __wrap_memcpy
+                0x10001210       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+                0x10001210                float_table_shim_on_use_helper
+ .text          0x1000123c       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x1000123c                __aeabi_mem_init
+ .text.memset   0x1000124c        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x1000124c                __wrap_memset
+ .text.memcpy   0x10001258        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x10001258                __wrap___aeabi_memcpy
+                0x10001258                __wrap_memcpy
  .text._out_char
-                0x10001230       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x10001264       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
  .text.weak_raw_vprintf
-                0x10001240       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
-                0x10001240                weak_raw_vprintf
- .text._exit    0x10001270        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-                0x10001270                _exit
- .text.exit     0x10001274        0x8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-                0x10001274                exit
+                0x10001274       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x10001274                weak_raw_vprintf
+ .text._exit    0x100012a4        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x100012a4                _exit
+ .text.exit     0x100012a8        0x8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x100012a8                exit
  .text.runtime_init
-                0x1000127c       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-                0x1000127c                runtime_init
+                0x100012b0       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x100012b0                runtime_init
  .text.stdio_out_chars_no_crlf
-                0x100012a8       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x100012dc       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .text.stdio_out_chars_crlf
-                0x100012b8       0xb0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x100012ec       0xb0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .text.stdio_put_string
-                0x10001368       0xfc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x10001368                stdio_put_string
+                0x1000139c       0xfc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x1000139c                stdio_put_string
  .text.__wrap_putchar
-                0x10001464       0x94 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x10001464                stdio_putchar
-                0x10001464                __wrap_putchar
+                0x10001498       0x94 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x10001498                stdio_putchar
+                0x10001498                __wrap_putchar
  .text.__wrap_puts
-                0x100014f8       0x3c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x100014f8                __wrap_puts
-                0x100014f8                stdio_puts
+                0x1000152c       0x3c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x1000152c                __wrap_puts
+                0x1000152c                stdio_puts
  .text.startup._retrieve_unique_id_on_boot
-                0x10001534       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+                0x10001568       0x10 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
  .text.flash_get_unique_id
-                0x10001544       0x3c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
-                0x10001544                flash_get_unique_id
- .text.strlen   0x10001580       0x5c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
-                0x10001580                strlen
+                0x10001578       0x3c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+                0x10001578                flash_get_unique_id
+ .text.strlen   0x100015b4       0x5c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+                0x100015b4                strlen
  *(.fini)
- .fini          0x100015dc        0x4 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crti.o
-                0x100015dc                _fini
- .fini.__stub   0x100015e0       0x40 linker stubs
+ .fini          0x10001610        0x4 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crti.o
+                0x10001610                _fini
+ *fill*         0x10001614        0x4 
+ .fini.__stub   0x10001618       0x40 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -3559,147 +3566,147 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
-                0x10001620                        . = ALIGN (0x4)
-                0x10001620                        PROVIDE (__preinit_array_start = .)
+                0x10001658                        . = ALIGN (0x4)
+                0x10001658                        PROVIDE (__preinit_array_start = .)
  *(SORT_BY_NAME(.preinit_array.*))
  .preinit_array.00100
-                0x10001620        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001620                __pre_init_runtime_init_early_resets
+                0x10001658        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001658                __pre_init_runtime_init_early_resets
  .preinit_array.00101
-                0x10001624        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001624                __pre_init_runtime_init_usb_power_down
+                0x1000165c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x1000165c                __pre_init_runtime_init_usb_power_down
  .preinit_array.00275
-                0x10001628        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+                0x10001660        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
  .preinit_array.00300
-                0x1000162c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x10001664        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
  .preinit_array.00350
-                0x10001630        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+                0x10001668        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
  .preinit_array.00350
-                0x10001634        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+                0x1000166c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
  .preinit_array.00500
-                0x10001638        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001638                __pre_init_runtime_init_clocks
+                0x10001670        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001670                __pre_init_runtime_init_clocks
  .preinit_array.00600
-                0x1000163c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x1000163c                __pre_init_runtime_init_post_clock_resets
+                0x10001674        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001674                __pre_init_runtime_init_post_clock_resets
  .preinit_array.00700
-                0x10001640        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001640                __pre_init_runtime_init_rp2040_gpio_ie_disable
+                0x10001678        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001678                __pre_init_runtime_init_rp2040_gpio_ie_disable
  .preinit_array.01000
-                0x10001644        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001644                __pre_init_runtime_init_spin_locks_reset
+                0x1000167c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x1000167c                __pre_init_runtime_init_spin_locks_reset
  .preinit_array.01100
-                0x10001648        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
-                0x10001648                __pre_init_runtime_init_mutex
+                0x10001680        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x10001680                __pre_init_runtime_init_mutex
  .preinit_array.10080
-                0x1000164c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x1000164c                __pre_init_runtime_init_install_ram_vector_table
+                0x10001684        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001684                __pre_init_runtime_init_install_ram_vector_table
  .preinit_array.11000
-                0x10001650        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
-                0x10001650                __pre_init_runtime_init_default_alarm_pool
+                0x10001688        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x10001688                __pre_init_runtime_init_default_alarm_pool
  .preinit_array.YYYYY
-                0x10001654        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-                0x10001654                __pre_init_first_per_core_initializer
+                0x1000168c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x1000168c                __pre_init_first_per_core_initializer
  .preinit_array.ZZZZZ.01200
-                0x10001658        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x10001658                __pre_init_runtime_init_per_core_irq_priorities
+                0x10001690        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x10001690                __pre_init_runtime_init_per_core_irq_priorities
  *(.preinit_array)
-                0x1000165c                        PROVIDE (__preinit_array_end = .)
-                0x1000165c                        . = ALIGN (0x4)
-                0x1000165c                        PROVIDE (__init_array_start = .)
+                0x10001694                        PROVIDE (__preinit_array_end = .)
+                0x10001694                        . = ALIGN (0x4)
+                0x10001694                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x1000165c        0x4 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
- .init_array    0x10001660        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
-                0x10001664                        PROVIDE (__init_array_end = .)
-                0x10001664                        . = ALIGN (0x4)
+ .init_array    0x10001694        0x4 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
+ .init_array    0x10001698        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+                0x1000169c                        PROVIDE (__init_array_end = .)
+                0x1000169c                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
                 [!provide]                        PROVIDE (__fini_array_end = .)
  *(.eh_frame*)
- .eh_frame      0x10001664        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10001664                        . = ALIGN (0x4)
+ .eh_frame      0x1000169c        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x1000169c                        . = ALIGN (0x4)
 
-.glue_7         0x10001664        0x0
- .glue_7        0x10001664        0x0 linker stubs
+.glue_7         0x1000169c        0x0
+ .glue_7        0x1000169c        0x0 linker stubs
 
-.glue_7t        0x10001664        0x0
- .glue_7t       0x10001664        0x0 linker stubs
+.glue_7t        0x1000169c        0x0
+ .glue_7t       0x1000169c        0x0 linker stubs
 
-.vfp11_veneer   0x10001664        0x0
- .vfp11_veneer  0x10001664        0x0 linker stubs
+.vfp11_veneer   0x1000169c        0x0
+ .vfp11_veneer  0x1000169c        0x0 linker stubs
 
-.v4_bx          0x10001664        0x0
- .v4_bx         0x10001664        0x0 linker stubs
+.v4_bx          0x1000169c        0x0
+ .v4_bx         0x1000169c        0x0 linker stubs
 
-.iplt           0x10001664        0x0
- .iplt          0x10001664        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x1000169c        0x0
+ .iplt          0x1000169c        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10001664       0xd8
+.rodata         0x1000169c       0xd8
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.panic.str1.4
-                0x10001664       0x80 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x1000169c       0x80 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
                                  0x12 (size before relaxing)
  .rodata.timer_hardware_alarm_claim.str1.4
-                0x100016e4       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x1000171c       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
  .rodata.hard_assertion_failure.str1.4
-                0x100016e4        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x1000171c        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .rodata.str1.4
-                0x100016e4       0x3c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x1000171c       0x3c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_84
-                0x100016e4        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x1000171c        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_78
-                0x100016f0        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001728        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_54
-                0x100016fc        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001734        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_48
-                0x10001708        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001740        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_42
-                0x10001714        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x1000174c        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_34
-                0x10001720        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001758        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_26
-                0x1000172c        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001764        0xc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.crlf_str.0
-                0x10001738        0x2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x1000173c                        . = ALIGN (0x4)
- *fill*         0x1000173a        0x2 
+                0x10001770        0x2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x10001774                        . = ALIGN (0x4)
+ *fill*         0x10001772        0x2 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x1000173c                        . = ALIGN (0x4)
+                0x10001774                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x1000173c                        __exidx_start = .
+                0x10001774                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x1000173c                        __exidx_end = .
-                0x1000173c                        . = ALIGN (0x4)
-                0x1000173c                        __binary_info_start = .
+                0x10001774                        __exidx_end = .
+                0x10001774                        . = ALIGN (0x4)
+                0x10001774                        __binary_info_start = .
 
-.binary_info    0x1000173c       0x1c
+.binary_info    0x10001774       0x1c
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr84
-                0x1000173c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001774        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .binary_info.keep.__bi_ptr78
-                0x10001740        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001778        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .binary_info.keep.__bi_ptr54
-                0x10001744        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x1000177c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .binary_info.keep.__bi_ptr48
-                0x10001748        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001780        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .binary_info.keep.__bi_ptr42
-                0x1000174c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001784        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .binary_info.keep.__bi_ptr34
-                0x10001750        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x10001788        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .binary_info.keep.__bi_ptr26
-                0x10001754        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x1000178c        0x4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  *(.binary_info.*)
-                0x10001758                        __binary_info_end = .
+                0x10001790                        __binary_info_end = .
 
-.rel.dyn        0x10001758        0x0
- .rel.iplt      0x10001758        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10001758                        . = ALIGN (0x4)
+.rel.dyn        0x10001790        0x0
+ .rel.iplt      0x10001790        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10001790                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -3713,7 +3720,7 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x200000c0                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.data           0x200000c0      0x2c8 load address 0x10001758
+.data           0x200000c0      0x2c8 load address 0x10001790
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -3768,23 +3775,23 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x20000388                        . = ALIGN (0x4)
 
 .tm_clone_table
-                0x20000388        0x0 load address 0x10001a20
+                0x20000388        0x0 load address 0x10001a58
  .tm_clone_table
                 0x20000388        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x20000388        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x20000388        0x0 load address 0x10001a20
+.igot.plt       0x20000388        0x0 load address 0x10001a58
  .igot.plt      0x20000388        0x0 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.tdata          0x20000388        0x0 load address 0x10001a20
+.tdata          0x20000388        0x0 load address 0x10001a58
                 0x20000388                        . = ALIGN (0x4)
  *(.tdata .tdata.* .gnu.linkonce.td.*)
                 0x20000388                        __tdata_end = .
                 0x20000388                        PROVIDE (__data_end__ = .)
-                0x10001758                        __etext = LOADADDR (.data)
+                0x10001790                        __etext = LOADADDR (.data)
 
-.tbss           0x20000388        0x0 load address 0x10001a20
+.tbss           0x20000388        0x0 load address 0x10001a58
                 0x20000388                        . = ALIGN (0x4)
                 0x20000388                        __bss_start__ = .
                 0x20000388                        __tls_base = .
@@ -3792,7 +3799,7 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.tcommon)
                 0x20000388                        __tls_end = .
 
-.bss            0x20000388      0x4f4 load address 0x10001a20
+.bss            0x20000388      0x4f4 load address 0x10001a58
                 0x20000388                        . = ALIGN (0x4)
                 0x20000388                        __tbss_end = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
@@ -3828,26 +3835,26 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *fill*         0x20000879        0x3 
                 0x2000087c                        __bss_end__ = .
 
-.heap           0x2000087c      0x800 load address 0x10001a20
+.heap           0x2000087c      0x800 load address 0x10001a58
                 0x2000087c                        __end__ = .
                 0x2000087c                        end = __end__
  *(.heap*)
  .heap          0x2000087c      0x800 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
                 0x20040000                        __HeapLimit = (ORIGIN (RAM) + LENGTH (RAM))
 
-.scratch_x      0x20040000        0x0 load address 0x10001a20
+.scratch_x      0x20040000        0x0 load address 0x10001a58
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10001a20                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x10001a58                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10001a20
+.scratch_y      0x20041000        0x0 load address 0x10001a58
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10001a20                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x10001a58                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .stack1_dummy
  *(.stack1*)
@@ -3856,9 +3863,9 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
 
-.flash_end      0x10001a20        0x0
+.flash_end      0x10001a58        0x0
  *(.embedded_end_block*)
-                0x10001a20                        PROVIDE (__flash_binary_end = .)
+                0x10001a58                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -3875,6 +3882,7 @@ LOAD /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-no
                 0x00000001                        ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed)
                 0x00000001                        ASSERT (((__binary_info_header_end - __logical_binary_start) <= 0x100), Binary info must be in first 256 bytes of the binary)
 LOAD CMakeFiles/blink.dir/blink.c.o
+LOAD CMakeFiles/blink.dir/clocks.c.o
 LOAD CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.o
 LOAD CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
 LOAD CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2040/pico_platform/platform.c.o
@@ -3982,83 +3990,86 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000004a       0x2c CMakeFiles/blink.dir/blink.c.o
  .ARM.attributes
-                0x00000076       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x00000076       0x2c CMakeFiles/blink.dir/clocks.c.o
  .ARM.attributes
-                0x000000a2       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+                0x000000a2       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
  .ARM.attributes
-                0x000000ce       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+                0x000000ce       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
  .ARM.attributes
-                0x000000fa       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+                0x000000fa       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
  .ARM.attributes
-                0x00000126       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x00000126       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
  .ARM.attributes
-                0x00000152       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+                0x00000152       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
  .ARM.attributes
-                0x0000017e       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x0000017e       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
  .ARM.attributes
-                0x000001aa       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x000001aa       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
  .ARM.attributes
-                0x000001d6       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x000001d6       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
  .ARM.attributes
-                0x00000202       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x00000202       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
  .ARM.attributes
-                0x0000022e       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+                0x0000022e       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
  .ARM.attributes
-                0x0000025a       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+                0x0000025a       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
  .ARM.attributes
-                0x00000286       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x00000286       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
  .ARM.attributes
-                0x000002b2       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+                0x000002b2       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
  .ARM.attributes
-                0x000002de       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x000002de       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
  .ARM.attributes
-                0x0000030a       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x0000030a       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .ARM.attributes
-                0x00000336       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+                0x00000336       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
  .ARM.attributes
-                0x00000362       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+                0x00000362       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
  .ARM.attributes
-                0x00000384       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+                0x0000038e       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
  .ARM.attributes
-                0x000003a6       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+                0x000003b0       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
  .ARM.attributes
-                0x000003c8       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+                0x000003d2       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
  .ARM.attributes
-                0x000003f4       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+                0x000003f4       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
  .ARM.attributes
-                0x00000416       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+                0x00000420       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
  .ARM.attributes
-                0x00000438       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+                0x00000442       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
  .ARM.attributes
-                0x00000464       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+                0x00000464       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
  .ARM.attributes
-                0x00000486       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x00000490       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
  .ARM.attributes
-                0x000004a8       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x000004b2       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
  .ARM.attributes
-                0x000004d4       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x000004d4       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .ARM.attributes
-                0x00000500       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+                0x00000500       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
  .ARM.attributes
-                0x00000522       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x0000052c       0x22 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
  .ARM.attributes
-                0x0000054e       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x0000054e       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
  .ARM.attributes
-                0x0000057a       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+                0x0000057a       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .ARM.attributes
-                0x000005a6       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+                0x000005a6       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
  .ARM.attributes
-                0x000005d2       0x22 pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default_library.dir/bs2_default_padded_checksummed.S.o
+                0x000005d2       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
  .ARM.attributes
-                0x000005f4       0x1e /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+                0x000005fe       0x22 pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default_library.dir/bs2_default_padded_checksummed.S.o
  .ARM.attributes
-                0x00000612       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+                0x00000620       0x1e /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x0000063e       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtend.o
+                0x0000063e       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+ .ARM.attributes
+                0x0000066a       0x2c /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v6-m/nofp/crtend.o
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 CMakeFiles/blink.dir/blink.c.o
                                  0x46 (size before relaxing)
+ .comment       0x00000045       0x46 CMakeFiles/blink.dir/clocks.c.o
  .comment       0x00000045       0x46 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
  .comment       0x00000045       0x46 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
  .comment       0x00000045       0x46 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
@@ -4085,368 +4096,379 @@ LOAD linker stubs
  .comment       0x00000045       0x46 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
  .comment       0x00000045       0x46 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
-.debug_info     0x00000000    0x18f9d
- .debug_info    0x00000000      0x465 CMakeFiles/blink.dir/blink.c.o
- .debug_info    0x00000465      0x1bf CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_info    0x00000624      0x9a1 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_info    0x00000fc5      0x45c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_info    0x00001421      0x245 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_info    0x00001666     0x220f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_info    0x00003875      0x15f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_info    0x000039d4     0x27f1 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_info    0x000061c5     0x5036 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
- .debug_info    0x0000b1fb     0x2b13 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_info    0x0000dd0e     0x2991 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_info    0x0001069f      0x4e5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_info    0x00010b84      0x248 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_info    0x00010dcc      0x678 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_info    0x00011444      0x1d0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_info    0x00011614      0x21a CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_info    0x0001182e      0x795 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_info    0x00011fc3      0x781 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_info    0x00012744       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_info    0x00012767       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_info    0x0001278a       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_info    0x000127ad      0x27e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_info    0x00012a2b       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_info    0x00012a4e       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_info    0x00012a71      0x27e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_info    0x00012cef       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_info    0x00012d12       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_info    0x00012d35      0x2b8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_info    0x00012fed     0x22f2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_info    0x000152df       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_info    0x00015302      0xb54 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_info    0x00015e56     0x1c52 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_info    0x00017aa8      0x201 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
- .debug_info    0x00017ca9     0x12f4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+.debug_info     0x00000000    0x190ec
+ .debug_info    0x00000000      0x4e0 CMakeFiles/blink.dir/blink.c.o
+ .debug_info    0x000004e0       0xd4 CMakeFiles/blink.dir/clocks.c.o
+ .debug_info    0x000005b4      0x1bf CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_info    0x00000773      0x9a1 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_info    0x00001114      0x45c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_info    0x00001570      0x245 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_info    0x000017b5     0x220f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_info    0x000039c4      0x15f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_info    0x00003b23     0x27f1 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_info    0x00006314     0x5036 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+ .debug_info    0x0000b34a     0x2b13 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_info    0x0000de5d     0x2991 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_info    0x000107ee      0x4e5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_info    0x00010cd3      0x248 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_info    0x00010f1b      0x678 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_info    0x00011593      0x1d0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_info    0x00011763      0x21a CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_info    0x0001197d      0x795 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_info    0x00012112      0x781 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_info    0x00012893       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_info    0x000128b6       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_info    0x000128d9       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_info    0x000128fc      0x27e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_info    0x00012b7a       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_info    0x00012b9d       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_info    0x00012bc0      0x27e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_info    0x00012e3e       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_info    0x00012e61       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_info    0x00012e84      0x2b8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_info    0x0001313c     0x22f2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_info    0x0001542e       0x23 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_info    0x00015451      0xb54 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_info    0x00015fa5     0x1c52 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_info    0x00017bf7      0x201 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_info    0x00017df8     0x12f4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
-.debug_abbrev   0x00000000     0x4944
- .debug_abbrev  0x00000000      0x205 CMakeFiles/blink.dir/blink.c.o
- .debug_abbrev  0x00000205      0x12b CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_abbrev  0x00000330      0x328 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_abbrev  0x00000658      0x20f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_abbrev  0x00000867      0x1bb CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_abbrev  0x00000a22      0x614 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_abbrev  0x00001036       0xee CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_abbrev  0x00001124      0x48c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_abbrev  0x000015b0      0x659 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
- .debug_abbrev  0x00001c09      0x4f2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_abbrev  0x000020fb      0x4eb CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_abbrev  0x000025e6      0x1d2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_abbrev  0x000027b8      0x145 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_abbrev  0x000028fd      0x1bc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_abbrev  0x00002ab9      0x11d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_abbrev  0x00002bd6      0x182 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_abbrev  0x00002d58      0x222 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_abbrev  0x00002f7a      0x2af CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_abbrev  0x00003229       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_abbrev  0x0000323b       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_abbrev  0x0000324d       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_abbrev  0x0000325f      0x17a CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_abbrev  0x000033d9       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_abbrev  0x000033eb       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_abbrev  0x000033fd      0x173 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_abbrev  0x00003570       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_abbrev  0x00003582       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_abbrev  0x00003594       0xb8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_abbrev  0x0000364c      0x50c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_abbrev  0x00003b58       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_abbrev  0x00003b6a      0x352 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_abbrev  0x00003ebc      0x5c4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_abbrev  0x00004480      0x153 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
- .debug_abbrev  0x000045d3      0x371 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+.debug_abbrev   0x00000000     0x49ee
+ .debug_abbrev  0x00000000      0x247 CMakeFiles/blink.dir/blink.c.o
+ .debug_abbrev  0x00000247       0x68 CMakeFiles/blink.dir/clocks.c.o
+ .debug_abbrev  0x000002af      0x12b CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_abbrev  0x000003da      0x328 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_abbrev  0x00000702      0x20f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_abbrev  0x00000911      0x1bb CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_abbrev  0x00000acc      0x614 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_abbrev  0x000010e0       0xee CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_abbrev  0x000011ce      0x48c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_abbrev  0x0000165a      0x659 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+ .debug_abbrev  0x00001cb3      0x4f2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_abbrev  0x000021a5      0x4eb CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_abbrev  0x00002690      0x1d2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_abbrev  0x00002862      0x145 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_abbrev  0x000029a7      0x1bc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_abbrev  0x00002b63      0x11d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_abbrev  0x00002c80      0x182 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_abbrev  0x00002e02      0x222 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_abbrev  0x00003024      0x2af CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_abbrev  0x000032d3       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_abbrev  0x000032e5       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_abbrev  0x000032f7       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_abbrev  0x00003309      0x17a CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_abbrev  0x00003483       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_abbrev  0x00003495       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_abbrev  0x000034a7      0x173 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_abbrev  0x0000361a       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_abbrev  0x0000362c       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_abbrev  0x0000363e       0xb8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_abbrev  0x000036f6      0x50c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_abbrev  0x00003c02       0x12 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_abbrev  0x00003c14      0x352 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_abbrev  0x00003f66      0x5c4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_abbrev  0x0000452a      0x153 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_abbrev  0x0000467d      0x371 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
 .debug_loclists
-                0x00000000     0xee77
+                0x00000000     0xeec7
  .debug_loclists
                 0x00000000      0x173 CMakeFiles/blink.dir/blink.c.o
  .debug_loclists
-                0x00000173      0x349 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+                0x00000173       0x50 CMakeFiles/blink.dir/clocks.c.o
  .debug_loclists
-                0x000004bc      0x108 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+                0x000001c3      0x349 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
  .debug_loclists
-                0x000005c4       0x7d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+                0x0000050c      0x108 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
  .debug_loclists
-                0x00000641     0x11ed CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x00000614       0x7d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
  .debug_loclists
-                0x0000182e       0x41 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+                0x00000691     0x11ed CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
  .debug_loclists
-                0x0000186f      0xaec CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x0000187e       0x41 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
  .debug_loclists
-                0x0000235b     0x27d7 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x000018bf      0xaec CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
  .debug_loclists
-                0x00004b32     0x19f6 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x000023ab     0x27d7 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
  .debug_loclists
-                0x00006528     0x2b6f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x00004b82     0x19f6 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
  .debug_loclists
-                0x00009097      0x1e0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+                0x00006578     0x2b6f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
  .debug_loclists
-                0x00009277       0x47 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+                0x000090e7      0x1e0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
  .debug_loclists
-                0x000092be      0x351 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x000092c7       0x47 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
  .debug_loclists
-                0x0000960f       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+                0x0000930e      0x351 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
  .debug_loclists
-                0x00009657       0x7e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x0000965f       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
  .debug_loclists
-                0x000096d5       0xba CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x000096a7       0x7e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .debug_loclists
-                0x0000978f       0x74 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+                0x00009725       0xba CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
  .debug_loclists
-                0x00009803       0x3d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+                0x000097df       0x74 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
  .debug_loclists
-                0x00009840       0x59 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+                0x00009853       0x3d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
  .debug_loclists
-                0x00009899     0x355f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x00009890       0x59 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
  .debug_loclists
-                0x0000cdf8      0x431 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x000098e9     0x355f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
  .debug_loclists
-                0x0000d229      0xf4f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x0000ce48      0x431 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
  .debug_loclists
-                0x0000e178      0x3d5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+                0x0000d279      0xf4f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .debug_loclists
-                0x0000e54d      0x92a CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+                0x0000e1c8      0x3d5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_loclists
+                0x0000e59d      0x92a CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
-.debug_aranges  0x00000000      0xe00
+.debug_aranges  0x00000000      0xe20
  .debug_aranges
                 0x00000000       0x68 CMakeFiles/blink.dir/blink.c.o
  .debug_aranges
-                0x00000068       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x00000068       0x20 CMakeFiles/blink.dir/clocks.c.o
  .debug_aranges
-                0x00000090       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+                0x00000088       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
  .debug_aranges
-                0x000000d8       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+                0x000000b0       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
  .debug_aranges
-                0x00000120       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+                0x000000f8       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
  .debug_aranges
-                0x00000148       0xb8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x00000140       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
  .debug_aranges
-                0x00000200       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+                0x00000168       0xb8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
  .debug_aranges
-                0x00000220       0x98 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x00000220       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
  .debug_aranges
-                0x000002b8       0xe0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x00000240       0x98 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
  .debug_aranges
-                0x00000398       0xf0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x000002d8       0xe0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
  .debug_aranges
-                0x00000488       0x90 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x000003b8       0xf0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
  .debug_aranges
-                0x00000518       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+                0x000004a8       0x90 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
  .debug_aranges
-                0x00000540       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+                0x00000538       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
  .debug_aranges
-                0x00000570       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x00000560       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
  .debug_aranges
-                0x000005b0       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+                0x00000590       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
  .debug_aranges
-                0x000005e0       0x38 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x000005d0       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
  .debug_aranges
-                0x00000618       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x00000600       0x38 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .debug_aranges
-                0x00000660       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+                0x00000638       0x48 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
  .debug_aranges
-                0x00000680       0x60 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+                0x00000680       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
  .debug_aranges
-                0x000006e0       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+                0x000006a0       0x60 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
  .debug_aranges
-                0x00000720      0x150 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+                0x00000700       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
  .debug_aranges
-                0x00000870       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+                0x00000740      0x150 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
  .debug_aranges
-                0x00000890       0xc8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+                0x00000890       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
  .debug_aranges
-                0x00000958      0x138 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+                0x000008b0       0xc8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
  .debug_aranges
-                0x00000a90       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+                0x00000978      0x138 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
  .debug_aranges
-                0x00000ab0       0x50 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+                0x00000ab0       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
  .debug_aranges
-                0x00000b00       0x38 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x00000ad0       0x50 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
  .debug_aranges
-                0x00000b38       0x18 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x00000b20       0x38 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
  .debug_aranges
-                0x00000b50       0x90 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x00000b58       0x18 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .debug_aranges
-                0x00000be0       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+                0x00000b70       0x90 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
  .debug_aranges
-                0x00000c08       0xa0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x00000c00       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
  .debug_aranges
-                0x00000ca8       0xc8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x00000c28       0xa0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
  .debug_aranges
-                0x00000d70       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+                0x00000cc8       0xc8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .debug_aranges
-                0x00000da0       0x60 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+                0x00000d90       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_aranges
+                0x00000dc0       0x60 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
 .debug_rnglists
-                0x00000000     0x27da
+                0x00000000     0x27de
  .debug_rnglists
-                0x00000000       0x92 CMakeFiles/blink.dir/blink.c.o
+                0x00000000       0x83 CMakeFiles/blink.dir/blink.c.o
  .debug_rnglists
-                0x00000092       0x19 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x00000083       0x13 CMakeFiles/blink.dir/clocks.c.o
  .debug_rnglists
-                0x000000ab       0xb6 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+                0x00000096       0x19 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
  .debug_rnglists
-                0x00000161       0x58 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+                0x000000af       0xb6 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
  .debug_rnglists
-                0x000001b9       0x3d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+                0x00000165       0x58 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
  .debug_rnglists
-                0x000001f6      0x37d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x000001bd       0x3d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
  .debug_rnglists
-                0x00000573       0x1f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+                0x000001fa      0x37d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
  .debug_rnglists
-                0x00000592      0x325 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x00000577       0x1f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
  .debug_rnglists
-                0x000008b7      0x7e2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+                0x00000596      0x325 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
  .debug_rnglists
-                0x00001099      0x2c6 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x000008bb      0x7e2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
  .debug_rnglists
-                0x0000135f      0x5af CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x0000109d      0x2c6 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
  .debug_rnglists
-                0x0000190e       0x5c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+                0x00001363      0x5af CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
  .debug_rnglists
-                0x0000196a       0x2b CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+                0x00001912       0x5c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
  .debug_rnglists
-                0x00001995      0x112 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x0000196e       0x2b CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
  .debug_rnglists
-                0x00001aa7       0x1f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+                0x00001999      0x112 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
  .debug_rnglists
-                0x00001ac6       0x3d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x00001aab       0x1f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
  .debug_rnglists
-                0x00001b03       0x49 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x00001aca       0x3d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .debug_rnglists
-                0x00001b4c       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+                0x00001b07       0x49 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
  .debug_rnglists
-                0x00001b6c       0x43 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+                0x00001b50       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
  .debug_rnglists
-                0x00001baf       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+                0x00001b70       0x43 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
  .debug_rnglists
-                0x00001bdb       0xf9 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+                0x00001bb3       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
  .debug_rnglists
-                0x00001cd4       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+                0x00001bdf       0xf9 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
  .debug_rnglists
-                0x00001ce8       0x99 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+                0x00001cd8       0x14 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
  .debug_rnglists
-                0x00001d81       0xe5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+                0x00001cec       0x99 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
  .debug_rnglists
-                0x00001e66       0x13 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+                0x00001d85       0xe5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
  .debug_rnglists
-                0x00001e79       0x38 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+                0x00001e6a       0x13 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
  .debug_rnglists
-                0x00001eb1       0x25 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x00001e7d       0x38 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
  .debug_rnglists
-                0x00001ed6      0x2a2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x00001eb5       0x25 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
  .debug_rnglists
-                0x00002178       0x1b CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+                0x00001eda      0x2a2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
  .debug_rnglists
-                0x00002193       0x7f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x0000217c       0x1b CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
  .debug_rnglists
-                0x00002212      0x2bb CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x00002197       0x7f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
  .debug_rnglists
-                0x000024cd       0x70 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+                0x00002216      0x2bb CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .debug_rnglists
-                0x0000253d      0x29d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+                0x000024d1       0x70 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_rnglists
+                0x00002541      0x29d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
-.debug_line     0x00000000    0x14a0e
- .debug_line    0x00000000      0x30e CMakeFiles/blink.dir/blink.c.o
- .debug_line    0x0000030e      0x29c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_line    0x000005aa      0x8ee CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_line    0x00000e98      0x4d8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_line    0x00001370      0x3bd CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_line    0x0000172d     0x1769 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_line    0x00002e96      0x2e8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_line    0x0000317e     0x1b39 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_line    0x00004cb7     0x3547 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
- .debug_line    0x000081fe     0x1d07 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_line    0x00009f05     0x2100 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_line    0x0000c005      0x4fd CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_line    0x0000c502      0x347 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_line    0x0000c849      0x46c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_line    0x0000ccb5      0x350 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_line    0x0000d005      0x31f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_line    0x0000d324      0x53f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_line    0x0000d863      0x55d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_line    0x0000ddc0      0x107 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_line    0x0000dec7      0x2a9 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_line    0x0000e170      0x452 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_line    0x0000e5c2      0x4ab CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_line    0x0000ea6d      0x66d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_line    0x0000f0da      0x3d2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_line    0x0000f4ac      0x3c0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_line    0x0000f86c      0x195 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_line    0x0000fa01       0x94 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_line    0x0000fa95      0x1fe CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_line    0x0000fc93     0x1d33 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_line    0x000119c6       0xa5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_line    0x00011a6b      0x870 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_line    0x000122db     0x14ce CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_line    0x000137a9      0x676 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
- .debug_line    0x00013e1f      0xbef CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+.debug_line     0x00000000    0x14c23
+ .debug_line    0x00000000      0x3e9 CMakeFiles/blink.dir/blink.c.o
+ .debug_line    0x000003e9      0x13a CMakeFiles/blink.dir/clocks.c.o
+ .debug_line    0x00000523      0x29c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_line    0x000007bf      0x8ee CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_line    0x000010ad      0x4d8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_line    0x00001585      0x3bd CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_line    0x00001942     0x1769 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_line    0x000030ab      0x2e8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_line    0x00003393     0x1b39 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_line    0x00004ecc     0x3547 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+ .debug_line    0x00008413     0x1d07 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_line    0x0000a11a     0x2100 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_line    0x0000c21a      0x4fd CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_line    0x0000c717      0x347 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_line    0x0000ca5e      0x46c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_line    0x0000ceca      0x350 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_line    0x0000d21a      0x31f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_line    0x0000d539      0x53f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_line    0x0000da78      0x55d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_line    0x0000dfd5      0x107 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_line    0x0000e0dc      0x2a9 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_line    0x0000e385      0x452 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_line    0x0000e7d7      0x4ab CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_line    0x0000ec82      0x66d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_line    0x0000f2ef      0x3d2 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_line    0x0000f6c1      0x3c0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_line    0x0000fa81      0x195 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_line    0x0000fc16       0x94 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_line    0x0000fcaa      0x1fe CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_line    0x0000fea8     0x1d33 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_line    0x00011bdb       0xa5 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_line    0x00011c80      0x870 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_line    0x000124f0     0x14ce CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_line    0x000139be      0x676 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_line    0x00014034      0xbef CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
-.debug_str      0x00000000     0x3da4
- .debug_str     0x00000000     0x3da4 CMakeFiles/blink.dir/blink.c.o
-                                0x194 (size before relaxing)
- .debug_str     0x00003da4      0x1f3 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_str     0x00003da4      0x376 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_str     0x00003da4      0x31f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_str     0x00003da4      0x232 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_str     0x00003da4      0xa66 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_str     0x00003da4      0x1fe CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_str     0x00003da4      0x791 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_str     0x00003da4     0x1187 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
- .debug_str     0x00003da4      0x9d9 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_str     0x00003da4      0x98e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_str     0x00003da4      0x451 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_str     0x00003da4      0x280 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_str     0x00003da4      0x345 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_str     0x00003da4      0x235 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_str     0x00003da4      0x285 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_str     0x00003da4      0x779 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_str     0x00003da4      0x48d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_str     0x00003da4       0x7d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_str     0x00003da4       0x80 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_str     0x00003da4       0x82 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_str     0x00003da4      0x2ae CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_str     0x00003da4       0x88 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_str     0x00003da4       0x80 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_str     0x00003da4      0x293 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_str     0x00003da4       0x86 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_str     0x00003da4       0x7d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_str     0x00003da4      0x3f4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_str     0x00003da4      0x4d7 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_str     0x00003da4       0x71 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_str     0x00003da4      0x713 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_str     0x00003da4      0xad7 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_str     0x00003da4      0x264 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
- .debug_str     0x00003da4      0x6be CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+.debug_str      0x00000000     0x3dcd
+ .debug_str     0x00000000     0x3dcd CMakeFiles/blink.dir/blink.c.o
+                                0x202 (size before relaxing)
+ .debug_str     0x00003dcd      0x18c CMakeFiles/blink.dir/clocks.c.o
+ .debug_str     0x00003dcd      0x1f3 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_str     0x00003dcd      0x376 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_str     0x00003dcd      0x31f CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_str     0x00003dcd      0x232 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_str     0x00003dcd      0xa66 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_str     0x00003dcd      0x1fe CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_str     0x00003dcd      0x791 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_str     0x00003dcd     0x1187 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+ .debug_str     0x00003dcd      0x9d9 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_str     0x00003dcd      0x98e CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_str     0x00003dcd      0x451 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_str     0x00003dcd      0x280 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_str     0x00003dcd      0x345 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_str     0x00003dcd      0x235 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_str     0x00003dcd      0x285 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_str     0x00003dcd      0x779 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_str     0x00003dcd      0x48d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_str     0x00003dcd       0x7d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_str     0x00003dcd       0x80 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_str     0x00003dcd       0x82 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_str     0x00003dcd      0x2ae CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_str     0x00003dcd       0x88 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_str     0x00003dcd       0x80 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_str     0x00003dcd      0x293 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_str     0x00003dcd       0x86 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_str     0x00003dcd       0x7d CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_str     0x00003dcd      0x3f4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_str     0x00003dcd      0x4d7 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_str     0x00003dcd       0x71 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_str     0x00003dcd      0x713 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_str     0x00003dcd      0xad7 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_str     0x00003dcd      0x264 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_str     0x00003dcd      0x6be CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
 
-.debug_frame    0x00000000     0x1870
- .debug_frame   0x00000000       0xc4 CMakeFiles/blink.dir/blink.c.o
- .debug_frame   0x000000c4       0x44 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_frame   0x00000108       0xa0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_frame   0x000001a8       0xa8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_frame   0x00000250       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_frame   0x00000280      0x1cc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_frame   0x0000044c       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_frame   0x0000046c      0x1e8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_frame   0x00000654      0x2ec CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
- .debug_frame   0x00000940      0x2c4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_frame   0x00000c04      0x1f4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_frame   0x00000df8       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_frame   0x00000e38       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_frame   0x00000e78       0xa0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_frame   0x00000f18       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_frame   0x00000f58       0x70 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_frame   0x00000fc8       0x84 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_frame   0x0000104c       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_frame   0x00001078       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_frame   0x000010a4       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_frame   0x000010cc      0x1f0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_frame   0x000012bc      0x174 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_frame   0x00001430      0x2a8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_frame   0x000016d8       0x5c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
- .debug_frame   0x00001734      0x114 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
- .debug_frame   0x00001848       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+.debug_frame    0x00000000     0x189c
+ .debug_frame   0x00000000       0xc8 CMakeFiles/blink.dir/blink.c.o
+ .debug_frame   0x000000c8       0x28 CMakeFiles/blink.dir/clocks.c.o
+ .debug_frame   0x000000f0       0x44 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_frame   0x00000134       0xa0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_frame   0x000001d4       0xa8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_frame   0x0000027c       0x30 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_frame   0x000002ac      0x1cc CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_frame   0x00000478       0x20 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_frame   0x00000498      0x1e8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_frame   0x00000680      0x2ec CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/common/pico_time/time.c.o
+ .debug_frame   0x0000096c      0x2c4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_frame   0x00000c30      0x1f4 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_frame   0x00000e24       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_frame   0x00000e64       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_frame   0x00000ea4       0xa0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_frame   0x00000f44       0x40 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_frame   0x00000f84       0x70 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_frame   0x00000ff4       0x84 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_frame   0x00001078       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_frame   0x000010a4       0x2c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_frame   0x000010d0       0x28 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_frame   0x000010f8      0x1f0 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_frame   0x000012e8      0x174 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_frame   0x0000145c      0x2a8 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_frame   0x00001704       0x5c CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.o
+ .debug_frame   0x00001760      0x114 CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_flash/flash.c.o
+ .debug_frame   0x00001874       0x28 /Applications/ArmGNUToolchain/14.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
 
 .debug_line_str
                 0x00000000      0x2f3
