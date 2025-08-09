@@ -61,8 +61,4 @@ CMakeFiles/blink.dir/Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdlib/s
  /Users/willoliver/pico/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
  /Users/willoliver/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
  /Users/willoliver/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
- /Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
- /Users/willoliver/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info.h \
- /Users/willoliver/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/defs.h \
- /Users/willoliver/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/structure.h \
- /Users/willoliver/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h
+ /Users/willoliver/pico/pico-sdk/src/rp2_common/pico_stdio_uart/include/pico/stdio_uart.h

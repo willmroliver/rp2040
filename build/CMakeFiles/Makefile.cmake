@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.0.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.0.3/CMakeSystem.cmake"
   "pico-sdk/src/rp2_common/pico_cyw43_driver/pioasm/tmp/pioasmBuild-mkdirs.cmake"
+  "/Users/willoliver/pico/hello/src/CMakeLists.txt"
   "/Users/willoliver/pico/pico-sdk/CMakeLists.txt"
   "/Users/willoliver/pico/pico-sdk/cmake/Platform/PICO.cmake"
   "/Users/willoliver/pico/pico-sdk/cmake/generic_board.cmake"
@@ -288,6 +289,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "pico-sdk/src/rp2_common/pico_stdio/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/src/rp2_common/pico_stdlib/CMakeFiles/CMakeDirectoryInformation.cmake"
   "pico-sdk/docs/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -298,4 +300,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "pico-sdk/src/rp2040/boot_stage2/CMakeFiles/bs2_default_library.dir/DependInfo.cmake"
   "pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/pioasmBuild.dir/DependInfo.cmake"
   "pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/DependInfo.cmake"
+  "src/CMakeFiles/pico_bootstrap_lib.dir/DependInfo.cmake"
   )

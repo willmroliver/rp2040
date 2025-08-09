@@ -2,23 +2,32 @@ cmake_minimum_required(VERSION 3.18)
 
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
-project(blink C CXX ASM)
+project(pico_bootstrap C CXX ASM)
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(LIB_NAME ${PROJECT_NAME}_lib)
+
+if(NOT DEFINED PICOTOOL_FETCH_FROM_GIT_PATH)
+  set(PICOTOOL_FETCH_FROM_GIT_PATH ~/pico/picotool/)
+endif()
 
 pico_sdk_init()
 
-add_executable(${PROJECT_NAME}
-            ${PROJECT_NAME}.c
-            clocks.c
-        )
+add_subdirectory(src)
 
-# pull in common dependencies
-target_link_libraries(${PROJECT_NAME} pico_stdlib)
+function(add_pico_executable EXEC USB UART)
+  add_executable(${EXEC} ${EXEC}.c)
+  target_link_libraries(${EXEC} pico_stdlib ${LIB_NAME})
 
-# enable usb or uart output
-pico_enable_stdio_usb(${PROJECT_NAME} 1)
-pico_enable_stdio_uart(${PROJECT_NAME} 0)
+  if (USB)
+    pico_enable_stdio_usb(${EXEC} 1)
+  endif()
+  if (UART)
+    pico_enable_stdio_uart(${EXEC} 1)
+  endif()
 
-# create map/bin/hex/uf2 file etc.
-pico_add_extra_outputs(${PROJECT_NAME})
+  pico_add_extra_outputs(${EXEC})
+endfunction()
+
+add_pico_executable(blink 0 0)
 

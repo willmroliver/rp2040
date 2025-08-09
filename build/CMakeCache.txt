@@ -123,8 +123,8 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//No help, variable specified on the command line.
-CMAKE_EXPORT_COMPILE_COMMANDS:UNINITIALIZED=ON
+//Enable/Disable output of compile commands during generation.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/Users/willoliver/pico/hello/build/CMakeFiles/pkgRedirects
@@ -172,7 +172,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=blink
+CMAKE_PROJECT_NAME:STATIC=pico_bootstrap
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/local/bin/arm-none-eabi-ranlib
@@ -261,8 +261,8 @@ FETCHCONTENT_QUIET:BOOL=ON
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
-//No help, variable specified on the command line.
-PICOTOOL_FETCH_FROM_GIT_PATH:UNINITIALIZED=~/pico/picotool
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=/usr/bin/git
 
 //PICO target board (e.g. pico, pico2)
 PICO_BOARD:STRING=pico
@@ -340,13 +340,22 @@ blink_IS_TOP_LEVEL:STATIC=ON
 blink_SOURCE_DIR:STATIC=/Users/willoliver/pico/hello
 
 //Value Computed by CMake
-hello_BINARY_DIR:STATIC=/Users/willoliver/pico/hello/build
+pico_BINARY_DIR:STATIC=/Users/willoliver/pico/hello/build
 
 //Value Computed by CMake
-hello_IS_TOP_LEVEL:STATIC=ON
+pico_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-hello_SOURCE_DIR:STATIC=/Users/willoliver/pico/hello
+pico_SOURCE_DIR:STATIC=/Users/willoliver/pico/hello
+
+//Value Computed by CMake
+pico_bootstrap_BINARY_DIR:STATIC=/Users/willoliver/pico/hello/build
+
+//Value Computed by CMake
+pico_bootstrap_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+pico_bootstrap_SOURCE_DIR:STATIC=/Users/willoliver/pico/hello
 
 //Value Computed by CMake
 pico_sdk_BINARY_DIR:STATIC=/Users/willoliver/pico/hello/build/pico-sdk
@@ -356,6 +365,12 @@ pico_sdk_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 pico_sdk_SOURCE_DIR:STATIC=/Users/willoliver/pico/pico-sdk
+
+//The directory containing a CMake configuration file for picotool.
+picotool_DIR:PATH=picotool_DIR-NOTFOUND
+
+//Directory where picotool has been installed
+picotool_INSTALL_DIR:PATH=/Users/willoliver/pico/hello/build/_deps
 
 //The directory containing a CMake configuration file for pioasm.
 pioasm_DIR:PATH=pioasm_DIR-NOTFOUND
@@ -452,6 +467,8 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
+CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
@@ -484,7 +501,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=96
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=97
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -536,6 +553,8 @@ DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 FAMILY_MCUS:INTERNAL=RP2040
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[/usr/local/Frameworks/Python.framework/Versions/3.11/bin/python3.11][found components: Interpreter ][v3.11.12()]
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 PICO_32BIT:INTERNAL=1
 PICO_ARM:INTERNAL=1
 PICO_BOOT_STAGE2_DIR:INTERNAL=/Users/willoliver/pico/pico-sdk/src/rp2040/boot_stage2
