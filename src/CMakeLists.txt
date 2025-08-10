@@ -10,3 +10,5 @@ target_include_directories(
   ${CMAKE_SOURCE_DIR}/inc
 )
 
+add_subdirectory(asm)
+
