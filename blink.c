@@ -4,9 +4,9 @@
 #include "resets.h"
 #include "gpio.h"
 
-void blink();
-
 extern int div(int, int);
+
+void blink();
 
 int main() 
 {

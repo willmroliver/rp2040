@@ -23,10 +23,13 @@ set(CMAKE_C_FLAGS "${COMMON_FLAGS} -std=gnu99")
 add_subdirectory(src)
 
 function(add_linked_executable EXEC)
-  set(ELF ${EXEC}.elf)
-  add_executable(${ELF} ${EXEC}.c)
-  target_link_libraries(${ELF} ${LIB_NAME})
-  target_link_options(${ELF} INTERFACE "-T ${LINKER_SCRIPT}")
+  add_executable(${EXEC} 
+    ${EXEC}.c
+    sys/newlib.c
+    sys/newlib.s
+  )
+  target_link_libraries(${EXEC} ${LIB_NAME})
+  target_link_options(${EXEC} INTERFACE "-T ${LINKER_SCRIPT}")
 endfunction()
 
 add_linked_executable(blink)
