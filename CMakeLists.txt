@@ -16,9 +16,13 @@ set(CMAKE_OBJDUMP arm-none-eabi-objdump)
 set(SIZE arm-none-eabi-size)
 set(LINKER_SCRIPT linker.ld)
 
-set(COMMON_FLAGS "-march=armv6-m -mthumb -g")
+set(COMMON_FLAGS "-march=armv6-m -mcpu=cortex-m0plus -mthumb -g")
 set(CMAKE_CXX_FLAGS "${COMMON_FLAGS} -std=c++20")
 set(CMAKE_C_FLAGS "${COMMON_FLAGS} -std=gnu99")
+
+add_link_options(
+  "-T${CMAKE_SOURCE_DIR}/linker.ld"
+)
 
 add_subdirectory(src)
 
@@ -27,9 +31,10 @@ function(add_linked_executable EXEC)
     ${EXEC}.c
     sys/newlib.c
     sys/newlib.s
+    sys/vector.c
+    sys/boot2.s
   )
   target_link_libraries(${EXEC} ${LIB_NAME})
-  target_link_options(${EXEC} INTERFACE "-T ${LINKER_SCRIPT}")
 endfunction()
 
 add_linked_executable(blink)

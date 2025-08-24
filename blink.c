@@ -16,13 +16,13 @@ int main()
 
 void blink() 
 {
-	volatile uint64_t delay_us = 500000, end;
+	volatile uint64_t delay_us = 250000, end;
 	int n, i = 0;
 
 	gpio_init_sio(GPIO_LED_PIN);
 	gpio_enable_output(GPIO_LED_PIN);
 
-	n = div(10, 3);
+	n = div(15, 3);
 
 	while (i < n) {
 		gpio_put(GPIO_LED_PIN, 1);
