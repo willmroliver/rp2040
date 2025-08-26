@@ -15,7 +15,8 @@ typedef uint32_t resets_target_t;
 
 #define RESETS ((resets_base_t *)(0x4000c000))
 
-#define RESETS_IO_BANK0 ((resets_target_t)(5))
+#define RESETS_IO_BANK0 ((resets_target_t) (5))
+#define RESETS_TIMER	((resets_target_t) (21))
 
 void init_peripheral(resets_target_t mask);
 

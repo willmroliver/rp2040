@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-#include "clocks.h"
+#include "timer.h"
 #include "resets.h"
 #include "gpio.h"
 
@@ -11,6 +11,7 @@ void blink();
 int main() 
 {
 	init_peripheral(RESETS_IO_BANK0);
+	init_peripheral(RESETS_TIMER);
 	blink();
 }
 
@@ -31,10 +32,10 @@ void blink()
 		while (get_time_us() < end);
 
 		gpio_put(GPIO_LED_PIN, 0);
-		
+
 		end = get_time_us() + delay_us;
 		while (get_time_us() < end);
-		
+
 		i++;
 	}
 }

@@ -30,9 +30,9 @@ function(add_linked_executable EXEC)
   add_executable(${EXEC} 
     ${EXEC}.c
     sys/newlib.c
-    sys/newlib.s
     sys/vector.c
-    sys/boot2.s
+    sys/asm/newlib.s
+    sys/asm/boot2.s
   )
   target_link_libraries(${EXEC} ${LIB_NAME})
 endfunction()

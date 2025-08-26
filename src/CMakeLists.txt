@@ -2,6 +2,9 @@ add_library(${LIB_NAME}
   clocks.c
   gpio.c
   resets.c
+  timer.c
+  util.c
+  xosc.c
 )
 
 target_include_directories(
