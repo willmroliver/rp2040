@@ -37,6 +37,7 @@ typedef enum {
 	CLK_GPOUT3,
 	CLK_REF,
 	CLK_SYS,
+	CLK_PERI,
 } clocks_t;
 
 #define NUM_CLOCKS 6 

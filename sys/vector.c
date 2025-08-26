@@ -1,4 +1,6 @@
 #include <stdint.h>
+#include "pll.h"
+#include "resets.h"
 #include "util.h"
 #include "xosc.h"
 #include "clocks.h"
@@ -10,14 +12,22 @@ extern int main();
 __attribute((section(".reset_handler")))
 void Reset_Handler()
 {
-	clocks_generic_t *clk_ref;
 	uintptr_t *cur = __bss_start__;
 
 	while (cur < __bss_end__) 
 		*cur++ = 0;
 
+	init_peripheral(RESETS_IO_BANK0);
+	init_peripheral(RESETS_TIMER);
+	init_peripheral(RESETS_PLL_SYS);
+
 	xosc_init();
-	clock_setup(CLK_REF, 2, 0, 12000000, 0);
+	clock_setup(CLK_REF, 2, 0, 12000000, 1);
+	clock_setup(CLK_SYS, 0, 0, 12000000, 1);
+	clock_setup(CLK_PERI, 0, 0, 12000000, 1);
+	pll_init(PLL_SYS, 1, 125, 6, 2);
+
+	/* @todo - why does the board seem to die when we switch clk_sys? glitch? */
 
 	main();
 

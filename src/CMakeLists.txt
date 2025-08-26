@@ -1,6 +1,7 @@
 add_library(${LIB_NAME}
   clocks.c
   gpio.c
+  pll.c
   resets.c
   timer.c
   util.c

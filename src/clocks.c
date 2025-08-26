@@ -17,7 +17,7 @@ void clock_setup(clocks_t which,
 		      uint32_t freq,
 		      uint32_t div)
 {
-	div = 1 << 8;
+	div <<= 8;
 
 	int glitchless = has_glitchless_mux(which);
 
