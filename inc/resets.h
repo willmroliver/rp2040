@@ -20,6 +20,8 @@ typedef uint32_t resets_target_t;
 #define RESETS_PLL_USB	((resets_target_t) (13))
 #define RESETS_TIMER	((resets_target_t) (21))
 
-void init_peripheral(resets_target_t mask);
+void reset_deassert(resets_target_t which);
+
+void reset_assert(resets_target_t which);
 
 #endif

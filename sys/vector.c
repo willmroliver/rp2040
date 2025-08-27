@@ -2,6 +2,7 @@
 #include "pll.h"
 #include "resets.h"
 #include "util.h"
+#include "watchdog.h"
 #include "xosc.h"
 #include "clocks.h"
 
@@ -17,9 +18,9 @@ void Reset_Handler()
 	while (cur < __bss_end__) 
 		*cur++ = 0;
 
-	init_peripheral(RESETS_IO_BANK0);
-	init_peripheral(RESETS_TIMER);
-	init_peripheral(RESETS_PLL_SYS);
+	reset_deassert(RESETS_IO_BANK0);
+	reset_deassert(RESETS_TIMER);
+	reset_deassert(RESETS_PLL_SYS);
 
 	xosc_init();
 	clock_setup(CLK_REF, 2, 0, 12000000, 1);
@@ -27,7 +28,9 @@ void Reset_Handler()
 	clock_setup(CLK_PERI, 0, 0, 12000000, 1);
 	pll_init(PLL_SYS, 1, 125, 6, 2);
 
-	/* @todo - why does the board seem to die when we switch clk_sys? glitch? */
+	/* set system clock to use XOSC + PLL at 125MHz */
+	clock_setup(CLK_SYS, 1, 0, 125000000, 1);
+	watchdog_tick_start(12);
 
 	main();
 

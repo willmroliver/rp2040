@@ -1,13 +1,21 @@
 #include "resets.h"
+#include "util.h"
 
-void init_peripheral(resets_target_t target)
+void reset_deassert(resets_target_t which)
 {
-	target = 1 << target; 
+	which = 1 << which; 
 	
 	/* De-assert peripheral service from reset state */
-	RESETS->RESET &= ~target; 
+	RESETS->RESET &= ~which; 
 
 	/* wait for ready-signal from peripheral  */
-	while (!(RESETS->DONE & target));
+	while (!(RESETS->DONE & which))
+		noop_loop();
+}
+
+void reset_assert(resets_target_t which)
+{
+	/* Return peripheral service into reset state */
+	RESETS->RESET |= (1 << which);
 }
 

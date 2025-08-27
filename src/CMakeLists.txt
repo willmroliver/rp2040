@@ -5,6 +5,7 @@ add_library(${LIB_NAME}
   resets.c
   timer.c
   util.c
+  watchdog.c
   xosc.c
 )
 

@@ -21,24 +21,14 @@ void blink()
 	gpio_init_sio(GPIO_LED_PIN);
 	gpio_enable_output(GPIO_LED_PIN);
 
-	n = div(15, 3);
+	n = div(15, 3) * 2 + 1;
 
 	while (i < n) {
-		gpio_put(GPIO_LED_PIN, 1);
+		gpio_put(GPIO_LED_PIN, i++ % 2);
 
-		for (int j = 1e6; j > 0; --j)
+		end = get_time_us() + delay_us;
+		while (get_time_us() < end)
 			noop_loop();
-		/* end = get_time_us() + delay_us; */
-		/* while (get_time_us() < end); */
-
-		gpio_put(GPIO_LED_PIN, 0);
-
-		/* end = get_time_us() + delay_us; */
-		/* while (get_time_us() < end); */
-		for (int j = 1e6; j > 0; --j)
-			noop_loop();
-
-		i++;
 	}
 }
 

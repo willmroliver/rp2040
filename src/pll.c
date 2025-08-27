@@ -17,6 +17,6 @@ void pll_init(pll_base_t *pll,
 	while (!(pll->CS >> 31))
 		noop_loop();
 
-	pll->PRIM = (pd1 << PD1_BIT_OFFSET) & (pd2 << PD2_BIT_OFFSET);
+	pll->PRIM = (pd1 << PD1_BIT_OFFSET) | (pd2 << PD2_BIT_OFFSET);
 	pll->PWR = pll->PWR & ~0x8;
 }
