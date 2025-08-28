@@ -35,7 +35,15 @@ function(add_linked_executable EXEC)
     sys/asm/boot2.s
   )
   target_link_libraries(${EXEC} ${LIB_NAME})
+  add_custom_command(
+    TARGET ${EXEC} POST_BUILD
+    COMMAND picotool uf2 convert 
+      ${CMAKE_BINARY_DIR}/${EXEC}.elf 
+      ${CMAKE_BINARY_DIR}/${EXEC}.uf2
+    COMMENT "Converting ELF to UF2"
+  )
 endfunction()
 
 add_linked_executable(blink)
+add_linked_executable(usb)
 

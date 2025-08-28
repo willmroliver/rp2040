@@ -19,6 +19,7 @@ typedef uint32_t resets_target_t;
 #define RESETS_PLL_SYS	((resets_target_t) (12))
 #define RESETS_PLL_USB	((resets_target_t) (13))
 #define RESETS_TIMER	((resets_target_t) (21))
+#define RESETS_USBCTRL	((resets_target_t) (24))
 
 void reset_deassert(resets_target_t which);
 

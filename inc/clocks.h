@@ -38,6 +38,7 @@ typedef enum {
 	CLK_REF,
 	CLK_SYS,
 	CLK_PERI,
+	CLK_USB,
 } clocks_t;
 
 #define NUM_CLOCKS 6 

@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include "pll.h"
 #include "resets.h"
-#include "util.h"
 #include "watchdog.h"
 #include "xosc.h"
 #include "clocks.h"

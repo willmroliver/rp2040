@@ -29,6 +29,7 @@ SECTIONS
   } > flash
 
   .text 0x10000200 : {
+    _entry_point = .;
     *(.reset_handler)
     *(.text*)
     *(.rodata*)
